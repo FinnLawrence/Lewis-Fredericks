@@ -1,7 +1,7 @@
 $(document).ready(function() {
     clipHero();
     pushBrand();
-    
+
     // SMOOTH SCROLL
     $('a[href^=#]').click(function(){
         if ($.attr(this, 'href') === "#" || $(this).hasClass("btn-tabpanel")) {
@@ -19,6 +19,16 @@ $(document).ready(function() {
             }, duration);
             return false;
         }
+    });
+
+    $('#modal-contact').on('show.bs.modal', function () {
+        console.log("hey");
+        $('body').addClass('modal-backdrop-blue');
+    });
+    
+    $('#modal-contact').on('hidden.bs.modal', function () {
+        console.log("hey");
+        $('body').removeClass('modal-backdrop-blue');
     });
 });
 
@@ -38,9 +48,9 @@ function clipHero() {
     var bottom = top + heroImage.height();
     var height = heroImage.height();
     var width = heroImage.width();
-    
+
     var greySectionTop = $('#hero-dark').offset().top;
-    
+
     if (greySectionTop < top) {
         heroImage.css("opacity", "0");
     } else if (greySectionTop < bottom) {
@@ -61,13 +71,13 @@ function pushBrand() {
     var brandBottom = brandTop + brand.height();
     var top = $('#brand-top').offset().top;
     var bottom = $('#brand-bottom').offset().top;
-    
+
     var heroDark = $('#hero-dark .center-image');
-    
+
     var pushBrand = $('#content').offset().top;
-    
+
     var scroll = $(window).scrollTop();
-    
+
     if (pushBrand < top) {
         brand.css("position", "fixed");
         brand.css("top", top - scroll + "px");

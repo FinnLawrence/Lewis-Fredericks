@@ -29,7 +29,6 @@
     <!-- Required Shopify Link & Logout Link -->
     <small>
       {{ powered_by_link }}
-      &middot; Theme based on <a href="http://bootstrapforshopify.com">Bootstrap for Shopify</a>
       {% if customer %}&middot; Logged in as <strong>{{ customer.name }}</strong> ({{ 'Logout' | customer_logout_link }}){% endif %}
     </small>
 

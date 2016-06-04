@@ -11,7 +11,7 @@ html, body {
 
 .nav-wrapper {
     position: fixed;
-    z-index: 10000;
+    z-index: 1000;
     top: -moz-calc(25vh - 40px);
     top: -webkit-calc(25vh - 40px);
     top: -o-calc(25vh - 40px);
@@ -280,6 +280,7 @@ input[type="text"], input[type="email"], textarea {
     border-bottom: 2px solid #454545;
     color: #454545;
     margin-bottom: 28px;
+    padding-bottom: 5px;
     outline: none;
     font-size: 14px !important;
 }
@@ -306,8 +307,14 @@ textarea {
 
 /* MODALS */
 
-.modal-backdrop {
+.modal-backdrop.in {
+    background-color: #FFFFFF;
+    opacity: 0;
+}
+
+body.modal-backdrop-blue .modal-backdrop.in {
     background-color: #a9b1ea;
+    opacity: 0.5;
 }
 
 .modal-content {
@@ -315,6 +322,7 @@ textarea {
     border-radius: 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #fefefe;
 }
 
 .modal-content .close {
@@ -363,6 +371,14 @@ textarea {
     padding: 0px;
     text-align: center;
     border-top: 0px;
+}
+
+.modal-shop .modal-dialog {
+    margin: 0px auto;
+}
+
+.modal-shop .modal-dialog .modal-content {
+    height: 100vh;
 }
 
 @media (min-width: 768px) {
